@@ -8,6 +8,8 @@ const default_state = {
 }
 
 
+
+
 //crear el reducer para ordenar la tienda 
 export const reducer = (state = default_state, action) =>{
     //switch para repartir el trabajo (cada acción tiene un tipo)
