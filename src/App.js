@@ -19,6 +19,7 @@ function App() {
           </div>
           <div className="col-12">
             <Result/>
+            
           </div>
         </div>
         

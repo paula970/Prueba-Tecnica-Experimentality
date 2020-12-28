@@ -5,6 +5,8 @@ export const fetchSearchRequest = "FETCHSEARCHREQUEST";  //tipo de acción
 export const fetchSearchSuccess = "FETCHSEARCHSUCCESS"
 export const fetchSearchFailure = "FETCHSEARCHFAILURE"
 
+export const fetchVideo= "FETCHVIDEO"
+
 //crear acción de tipo buscar petición lo envía al store y se lo pasa al trabajador (reducer)
 export const fetchSearchRequest_action = () =>{
     return{
@@ -27,6 +29,15 @@ export const fetchSearchFailure_action = (error) => {
 
     }
 }
+
+export const fetchvideo_action = (valor1) => {
+    return {
+        type: fetchVideo,
+        payload: valor1
+
+    }
+}
+
 
 export const fetchSearch = (valor) => {
     //retorna una función que devuelve otra función (uso del dispatch)
