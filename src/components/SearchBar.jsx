@@ -6,23 +6,36 @@ export const SearchBar = () => {
     //invocar el dispatch
     const dispatch = useDispatch();
     const [video_name, set_video_name] = useState("");
-     
 
-    return(
-        <div className="form group">
-            <label htmlFor="buscar_video" className="txt-white">Buscar vídeo</label>
-            <input type="text" className="form-control" id="buscar_video" value={video_name}
-            onChange={(event) => {
-                set_video_name(event.target.value)
-            }}
-            
+
+    return (
+
+        <div className="header">
+            <div className="logo">
+                <img src="https://www.experimentality.co/wp-content/uploads/2017/04/experimentalitycerebro_negativo.png" className="logo_img" />
+                <span className="logo_nombre">
+                    Experimentality
+                </span>
+            </div>
+            <div className="search">
+                <button className="search_btn" onClick={
+                    () => {
+                        dispatch(fetchSearch(video_name))
+                    }
+                }>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+
+            </div>
+            <input type="text" className="buscar_input" value={video_name}
+                onChange={(event) => {
+                    set_video_name(event.target.value)
+                }}
+
             />
-            <button className="btn btn-primary mt-3" onClick={
-                () => {
-                    dispatch(fetchSearch(video_name))
-                }
-            }>Buscar</button>
-            
+
         </div>
     );
 } 

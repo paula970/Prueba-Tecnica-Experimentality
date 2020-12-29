@@ -51,7 +51,7 @@ export const fetchSearch = (valor) => {
     return(dispatch) => {
         dispatch(fetchSearchRequest_action())
         //dirección de la api
-        Axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=${valor}type=video&key=AIzaSyB2xNFBsSH6exD5TwYeW16Y0b8avsmSEpU`)
+        Axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=${valor}type=video&key=AIzaSyBcNkWpmdyEi2G-avtf8hZbgrApyNhvV48`)
         .then(response =>{
             dispatch(fetchSearchSuccess_action([response.data]));//data es la respuesta de la api 
         })

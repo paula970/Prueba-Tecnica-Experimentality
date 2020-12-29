@@ -13,7 +13,7 @@ function App() {
     //se le pasa el store por medio de ese props
     <Provider store={store}> 
       <div className="App">
-        <div className="row">
+        <div>
           <div className="col-12 mt-4 border-top pt-3">
             <SearchBar/>
           </div>

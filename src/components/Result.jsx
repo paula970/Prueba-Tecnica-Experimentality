@@ -14,7 +14,7 @@ export const Result = () => {
     return (
         //> hijo
         <div>
-            <h3 className="text white">Recomendados o encontrados</h3>
+            <h3>Recomendados o encontrados</h3>
             {
                 search.length >= 1 &&
                 <div>

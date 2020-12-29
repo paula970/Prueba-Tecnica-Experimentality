@@ -1,10 +1,78 @@
 body {
-  font: 100% Helvetica, sans-serif;
-  color: #1abc9c;
+  font: 100% "Comfortaa", cursive;
+  color: #333333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #333;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo_img {
+  max-width: 65px;
+  width: 100%;
+}
+
+.logo_nombre {
+  font-family: "Comfortaa", cursive;
+  margin-right: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #a1cb00;
 }
 
 .gallery-container {
   float: left;
+}
+
+.search {
+  position: relative;
+  overflow: hidden;
+  width: 45px;
+  transition: width 0.5s;
+}
+
+.buscar_input {
+  position: absolute;
+  width: 130px;
+  height: 23px;
+  right: 50px;
+  border: 0;
+  font-size: 1.2rem;
+}
+
+.search_btn {
+  position: relative;
+  float: right;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0;
+  background-color: #ffffff;
+  transition: #a1cb00;
+}
+
+.search_btn svg {
+  width: 90%;
+  height: 90%;
+  color: #252323;
+}
+
+.search:hover {
+  width: 180px;
+}
+
+.search_btn:hover {
+  background-color: #1abc9c;
 }
 
 .gallery-card {
