@@ -1,25 +1,10 @@
-import { fetchSearchRequest, fetchSearchSuccess, fetchSearchFailure, fetchVideo} from "./actions";
+import { fetchSearchRequest, fetchSearchSuccess, fetchSearchFailure, fetchVideo, fetchVideoInfo} from "./actions";
 //Reducers
 //estado actual de la tienda ############
 const default_state = {
     loading: false,
     search: [],
     error: ''
-}
-
-const mostrar_video = {
-    isOpen: false,
-}
-
-export const reducer2 = (state = mostrar_video, action) => {
-    switch (action.type) {
-        case fetchVideo:
-            return {
-                isOpen: true,
-                valor1: action.payload,
-            }
-        default: return state;
-    }
 }
 
 //crear el reducer para ordenar la tienda 
@@ -48,3 +33,35 @@ export const reducer = (state = default_state, action) => {
         default: return state;
     }
 }
+
+const view_video = {
+    isOpen: false,
+    videoid: ''
+}
+
+export const reducer2 = (state = view_video, action) => {
+    switch (action.type) {
+        case fetchVideo:
+            return {
+                isOpen: true,
+                videoid: action.payload
+            }
+        default: return state;
+    }
+}
+
+const details_video ={
+    video_info: ''
+
+}
+
+export const reducer3 = (state = details_video, action) => {
+    switch (action.type) {
+        case fetchVideoInfo:
+            return {
+                video_info: action.payload
+            }
+        default: return state;
+    }
+}
+

@@ -6,6 +6,7 @@ export const fetchSearchSuccess = "FETCHSEARCHSUCCESS"
 export const fetchSearchFailure = "FETCHSEARCHFAILURE"
 
 export const fetchVideo= "FETCHVIDEO"
+export const fetchVideoInfo = "FETCHVIDEOINFO"
 
 //crear acción de tipo buscar petición lo envía al store y se lo pasa al trabajador (reducer)
 export const fetchSearchRequest_action = () =>{
@@ -30,14 +31,19 @@ export const fetchSearchFailure_action = (error) => {
     }
 }
 
-export const fetchvideo_action = (valor1) => {
+export const fetchvideo_action = (videoid ) => {
     return {
         type: fetchVideo,
-        payload: valor1
-
+        payload: videoid,
     }
 }
 
+export const fetchVideoInfo_action = (videoInfo ) => {
+    return {
+        type: fetchVideoInfo,
+        payload: videoInfo,
+    }
+}
 
 export const fetchSearch = (valor) => {
     //retorna una función que devuelve otra función (uso del dispatch)
