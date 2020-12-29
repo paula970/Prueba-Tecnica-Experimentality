@@ -3,6 +3,10 @@ $primary-color: #1abc9c;
 $radius: 4px;
 $color-background: #333333;
 $clor-verde: #a1cb00;
+$breakpoint-tablet: 714px;
+@media (min-width: $breakpoint-tablet) {
+    
+}
 
 body {
   font: 100% $font-stack;
@@ -88,7 +92,7 @@ body {
 }
 
 .gallery-thumbnail {
-  max-width: 15%;
+  max-width: 90%;
   height: auto;
   border-radius: $radius;
   padding: 6px;
@@ -110,3 +114,7 @@ body {
   display: table;
   clear: both;
 }
+
+//styles carousel
+
+

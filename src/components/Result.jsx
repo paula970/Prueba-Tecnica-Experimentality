@@ -3,11 +3,12 @@ import ReactPlayer from 'react-player';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { fetchvideo_action, fetchVideoInfo_action } from '../redux/actions';
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 export const Result = () => {
-    //llamar al estado actual 
     const dispatch = useDispatch();
+    //llamar al estado actual 
     const search = useSelector(state => state.buscador.search)
     const showVideo = useSelector(state => state.video)
     const info = useSelector(state => state.videoInfo)
@@ -18,20 +19,35 @@ export const Result = () => {
             {
                 search.length >= 1 &&
                 <div>
-                    {
-                        search[0].items.map(item => (
-                            <img className='gallery-thumbnail' src={item.snippet.thumbnails.medium.url}
-                                key={item}
-                                onClick={
-                                    () => {
-                                        dispatch(fetchvideo_action(item.id.videoId));
-                                        dispatch(fetchVideoInfo_action(item.snippet))
-                                    }
-                                }
-                            />
-
-                        ))
-                    }
+                    <Carousel
+                        arrows={true}
+                        responsive={{
+                            desktop: {
+                                breakpoint: { max: 3000, min: 768 },
+                                items: 6,
+                            },
+                            mobile: {
+                                breakpoint: { max: 767, min: 0 },
+                                items: 3,
+                            },
+                        }}>
+                        {
+                            search[0].items.map(item => {
+                                return (
+                                    <img className='gallery-thumbnail' src={item.snippet.thumbnails.medium.url}
+                                        key={item}
+                                        onClick={
+                                            () => {
+                                                dispatch(fetchvideo_action(item.id.videoId));
+                                                dispatch(fetchVideoInfo_action(item.snippet))
+                                            }
+                                        }
+                                    />
+                                )
+                            }
+                            )
+                        }
+                    </Carousel>
                 </div>
             }
             {
