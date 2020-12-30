@@ -52,22 +52,24 @@ export const Result = () => {
             }
             {
                 showVideo.isOpen == true &&
-                <div className='row'>
-                    <div className='column'>
-                        <ReactPlayer
-                            url={`http://www.youtube.com/watch?v=${showVideo.videoid}`}
-                            width='100%'
-                            height='100%'
-                            controls
-                        />
+                <div class='flex wrap'>
+                    <div className='row'>
+                        <div className='content_video'>
+                            <ReactPlayer
+                                url={`http://www.youtube.com/watch?v=${showVideo.videoid}`}
+                                width='100%'
+                                height='100%'
+                                controls
+                                className='react_player'
+                            />
+                        </div>
                     </div>
-                    <div className='column'>
+                    <div className='row'>
                         <h2>{info.video_info.title}</h2>
                         <p>{info.video_info.description}</p>
                     </div>
                 </div>
             }
-            <span className="text-danger">Error</span>
         </div>
     );
 
