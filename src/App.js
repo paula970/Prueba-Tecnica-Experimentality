@@ -4,7 +4,7 @@ import store from './redux/store';
 import { Navbar } from './components/Navbar';
 import { Result } from './components/Result';
 
-//the provider has the possibility to connect to the store
+//the provider has the possibility to connect to the store.
 function App() {
   console.log(store.getState());
   return (
