@@ -85,15 +85,6 @@ body {
 }
 
 /* Clear floats after the columns */
-.column {
-  float: left;
-  width: 50%;
-  border: 1px solid #333333;
-  padding: 10px;
-  height: 300px;
-  box-sizing: border-box;
-}
-
 .flex {
   display: flex;
 }

@@ -46,7 +46,7 @@ export const fetchSearch = (value) => {
     return (dispatch) => {
         dispatch(fetchSearchRequest_action())
         //api address
-        Axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=${value}type=video&key=AIzaSyA8UItdOOz3d1yF1Wem2xNXbYoJ1iL5LAQ`)
+        Axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=${value}type=video&key=AIzaSyDp_my6Sq82d4MxDzPBHjeFnSfYQLcmYHU`)
             .then(response => {
                 //.then because it receives a promise and if it enters it is because everything is correct
                 dispatch(fetchSearchSuccess_action([response.data]));//data is the api response
