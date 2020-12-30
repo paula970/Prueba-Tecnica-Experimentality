@@ -6,7 +6,6 @@ import { Result } from './components/Result';
 
 //the provider has the possibility to connect to the store.
 function App() {
-  console.log(store.getState());
   return (
     //the store is passed through that props
     <Provider store={store}>
