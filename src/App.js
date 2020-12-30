@@ -1,31 +1,26 @@
 import './App.css';
-import { Provider } from 'react-redux'; //componente que envuelve toda la aplicación
+import { Provider } from 'react-redux'; //component that wraps the entire application
 import store from './redux/store';
-import { SearchBar } from './components/SearchBar';
+import { Navbar } from './components/Navbar';
 import { Result } from './components/Result';
 
-//el provider tiene la posibilidad de conectarse al store
-
+//the provider has the possibility to connect to the store
 function App() {
-
   console.log(store.getState());
   return (
-    //se le pasa el store por medio de ese props
-    <Provider store={store}> 
+    //the store is passed through that props
+    <Provider store={store}>
       <div className="App">
         <div>
           <div className="col-12 mt-4 border-top pt-3">
-            <SearchBar/>
+            <Navbar />
           </div>
           <div className="col-12">
-            <Result/>
-            
+            <Result />
           </div>
         </div>
-        
       </div>
     </Provider>
   );
 }
-
 export default App;

@@ -1,20 +1,21 @@
-import { fetchSearchRequest, fetchSearchSuccess, fetchSearchFailure, fetchVideo, fetchVideoInfo} from "./actions";
+import { fetchSearchRequest, fetchSearchSuccess, fetchSearchFailure, fetchVideo, fetchVideoInfo } from "./actions";
 //Reducers
-//estado actual de la tienda ############
+//current state of the store
 const default_state = {
     loading: false,
     search: [],
     error: ''
 }
 
-//crear el reducer para ordenar la tienda 
+//create the reducers to manage the store
+
+//reducer to search
 export const reducer = (state = default_state, action) => {
-    //switch para repartir el trabajo (cada acción tiene un tipo)
+    //switch to distribute the work, each action has a type.
     switch (action.type) {
         case fetchSearchRequest:
             return {
-                //#######estado actual action.payload video 4
-                ...state, //... devolvemos todo el estado anterior y se hace la modificación pertinente
+                ...state, //the ... we return all the previous state and the pertinent modification is made
                 loading: true
             }
         case fetchSearchSuccess:
@@ -34,11 +35,13 @@ export const reducer = (state = default_state, action) => {
     }
 }
 
+//state
 const view_video = {
     isOpen: false,
     videoid: ''
 }
 
+//reducer to bring the video id
 export const reducer2 = (state = view_video, action) => {
     switch (action.type) {
         case fetchVideo:
@@ -50,11 +53,13 @@ export const reducer2 = (state = view_video, action) => {
     }
 }
 
-const details_video ={
+//state
+const details_video = {
     video_info: ''
 
 }
 
+//reducer to bring information from the video
 export const reducer3 = (state = details_video, action) => {
     switch (action.type) {
         case fetchVideoInfo:

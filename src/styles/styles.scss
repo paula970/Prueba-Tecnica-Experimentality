@@ -1,18 +1,21 @@
+//variables -->
 $font-stack: "Comfortaa", cursive;
-$primary-color: #1abc9c;
-$radius: 4px;
+//color
+$secondary-color: #1abc9c;
 $color-background: #333333;
-$clor-verde: #a1cb00;
-$breakpoint-tablet: 767px;
-@media (max-width: $breakpoint-tablet) {
-  .logo_nombre {
+$primary-color: #a1cb00;
+$breakpoint: 767px;
+$radius: 4px;
+
+@media (max-width: $breakpoint) {
+  .logo_name {
     display: none;
   }
 }
+
 body {
   font: 100% $font-stack;
   color: $color-background;
-  
 }
 
 //header styles
@@ -21,7 +24,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
-  background-color: #333;
+  background-color: $color-background;
 }
 
 //logo styles
@@ -33,16 +36,22 @@ body {
   max-width: 65px;
   width: 100%;
 }
-.logo_nombre {
-  font-family: "Comfortaa", cursive;
+.logo_name {
   margin-right: 5px;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #a1cb00;
+  color: $primary-color;
 }
 
-.gallery-container {
-  float: left;
+//style input
+._input {
+  position: absolute;
+  margin-right: 1rem;
+  width: 200px;
+  height: 23px;
+  right: 50px;
+  border: 0;
+  font-size: 1.2rem;
 }
 
 //search style
@@ -52,18 +61,6 @@ body {
   width: 45px;
   transition: width 0.5s;
 }
-
-//style input
-.buscar_input {
-  position: absolute;
-  margin-right:1rem;
-  width: 200px;
-  height: 23px;
-  right: 50px;
-  border: 0;
-  font-size: 1.2rem;
-}
-
 .search_btn {
   position: relative;
   float: right;
@@ -73,27 +70,21 @@ body {
   cursor: pointer;
   border: 0;
   background-color: #ffffff;
-  transition: $clor-verde;
+  transition: $primary-color;
 }
-
 .search_btn svg {
   width: 90%;
   height: 90%;
-  color: rgb(37, 35, 35);
+  color: $color-background;
 }
 .search:hover {
   width: 180px;
 }
-
 .search_btn:hover {
   background-color: $primary-color;
 }
-.gallery-card {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1.875rem;
-}
 
+//styles thumbnails
 .gallery-thumbnail {
   max-width: 90%;
   height: auto;
@@ -102,38 +93,34 @@ body {
   margin-bottom: 1.875rem;
 }
 
+/* Clear floats after the columns */
 .column {
   float: left;
   width: 50%;
-  border: 1px solid #ccc;
+  border: 1px solid $color-background;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  height: 300px;
   box-sizing: border-box;
 }
-
-/* Clear floats after the columns */
 .flex {
-    display: flex;
-    
+  display: flex;
 }
 .wrap {
-	flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .row {
-  flex-basis:384px;
+  flex-basis: 384px;
   flex-shrink: 1;
   flex-grow: 1;
 }
 
-.content_video{
-    position: relative;
-    padding-top: 56.25%;
+//video responsive
+.content_video {
+  position: relative;
+  padding-top: 56.25%;
 }
-
-.react_player{
-    position: absolute;
-    top:0;
-    left:0;
+.react_player {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-
-//styles carousel

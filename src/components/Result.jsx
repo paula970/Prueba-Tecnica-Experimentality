@@ -8,12 +8,11 @@ import "react-multi-carousel/lib/styles.css";
 
 export const Result = () => {
     const dispatch = useDispatch();
-    //llamar al estado actual 
-    const search = useSelector(state => state.buscador.search)
+    //call current states
+    const search = useSelector(state => state.look.search)
     const showVideo = useSelector(state => state.video)
     const info = useSelector(state => state.videoInfo)
     return (
-        //> hijo
         <div>
             <h3>Recomendados o encontrados</h3>
             {
@@ -34,6 +33,7 @@ export const Result = () => {
                         {
                             search[0].items.map(item => {
                                 return (
+                                    //show thumbnails gallery
                                     <img className='gallery-thumbnail' src={item.snippet.thumbnails.medium.url}
                                         key={item}
                                         onClick={
@@ -51,6 +51,7 @@ export const Result = () => {
                 </div>
             }
             {
+                //show the video that corresponds to the selected thumbnail
                 showVideo.isOpen == true &&
                 <div class='flex wrap'>
                     <div className='row'>
@@ -72,5 +73,4 @@ export const Result = () => {
             }
         </div>
     );
-
 };

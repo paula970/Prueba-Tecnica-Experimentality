@@ -1,5 +1,5 @@
 @media (max-width: 767px) {
-  .logo_nombre {
+  .logo_name {
     display: none;
   }
 }
@@ -13,7 +13,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
-  background-color: #333;
+  background-color: #333333;
 }
 
 .logo {
@@ -26,26 +26,14 @@ body {
   width: 100%;
 }
 
-.logo_nombre {
-  font-family: "Comfortaa", cursive;
+.logo_name {
   margin-right: 5px;
   font-size: 1.5rem;
   font-weight: bold;
   color: #a1cb00;
 }
 
-.gallery-container {
-  float: left;
-}
-
-.search {
-  position: relative;
-  overflow: hidden;
-  width: 45px;
-  transition: width 0.5s;
-}
-
-.buscar_input {
+._input {
   position: absolute;
   margin-right: 1rem;
   width: 200px;
@@ -53,6 +41,13 @@ body {
   right: 50px;
   border: 0;
   font-size: 1.2rem;
+}
+
+.search {
+  position: relative;
+  overflow: hidden;
+  width: 45px;
+  transition: width 0.5s;
 }
 
 .search_btn {
@@ -70,7 +65,7 @@ body {
 .search_btn svg {
   width: 90%;
   height: 90%;
-  color: #252323;
+  color: #333333;
 }
 
 .search:hover {
@@ -78,13 +73,7 @@ body {
 }
 
 .search_btn:hover {
-  background-color: #1abc9c;
-}
-
-.gallery-card {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1.875rem;
+  background-color: #a1cb00;
 }
 
 .gallery-thumbnail {
@@ -95,17 +84,16 @@ body {
   margin-bottom: 1.875rem;
 }
 
+/* Clear floats after the columns */
 .column {
   float: left;
   width: 50%;
-  border: 1px solid #ccc;
+  border: 1px solid #333333;
   padding: 10px;
   height: 300px;
-  /* Should be removed. Only for demonstration */
   box-sizing: border-box;
 }
 
-/* Clear floats after the columns */
 .flex {
   display: flex;
 }
